@@ -1,0 +1,4 @@
+15,13,29,1.11,4.11, jharkand,chakardharpur
+45,33,9,2.9,3.5,lakshadweep,bitra island
+12,9,6,5.9,6.8,chandigarh,chandigarh
+32,123,113,101,122,jammu kashmir,bandipur
