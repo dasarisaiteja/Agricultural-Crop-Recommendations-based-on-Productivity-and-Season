@@ -1,12 +1,19 @@
 # Importing essential libraries and modules
 
 from flask import Flask, render_template, request
+from flask import redirect
 from markupsafe import Markup
 import numpy as np
 import pandas as pd
 import requests
+
+import os
 import pickle
-import io
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, 'models', 'RandomForest.pkl')
+crop_recommendation_model = pickle.load(open(model_path, 'rb'))
 
 
 # Loading crop recommendation model
@@ -95,7 +102,8 @@ def fert_recommend():
     K = int(request.form['pottasium'])
     # ph = float(request.form['ph'])
 
-    df = pd.read_csv('Data/fertilizer.csv')
+    csv_path = os.path.join(BASE_DIR, 'Data', 'fertilizer.csv')
+    df = pd.read_csv(csv_path)
 
     nr = df[df['Crop'] == crop_name]['N'].iloc[0]
     pr = df[df['Crop'] == crop_name]['P'].iloc[0]
@@ -153,4 +161,5 @@ def disease_prediction():
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=False)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
