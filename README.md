@@ -1,5 +1,8 @@
 # 🌱 Agricultural Crop Recommendation System
 
+## 😎 live-link
+https://agricultural-crop-recommendations-based-br98.onrender.com/
+
 ## 📌 Overview
 
 The **Agricultural Crop Recommendation System** is a Machine Learning-based web application that helps farmers and agricultural stakeholders choose the most suitable crop based on environmental and soil conditions.
