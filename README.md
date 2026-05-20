@@ -71,7 +71,7 @@ Agricultural-Crop-Recommendation/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-repo-link>
+git clone 
 cd Agricultural-Crop-Recommendation
 ```
 
